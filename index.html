@@ -1,11 +1,204 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Boostrap demo</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Zaida</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #5c6bc0, #3949ab);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #3949ab;
+      border-left: 5px solid #5c6bc0;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    section p, ul {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #3949ab;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Zaida's Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="profil" class="fade-in">
+    <h2>Profil</h2>
+    <p>Halo! Saya <strong>Zaida</strong>, siswi SMK Informatika Utama jurusan <strong>Rekayasa Perangkat Lunak</strong>. 
+    Saya memiliki minat di bidang pengembangan website dan sedang mencari tempat PKL untuk mengasah kemampuan saya di bidang IT.</p>
+  </section>
+
+  <section id="pendidikan" class="fade-in">
+    <h2>Pendidikan</h2>
+    <ul>
+      <li><strong>SMK Informatika Utama</strong> (2022 - Sekarang) — Jurusan Rekayasa Perangkat Lunak</li>
+      <li><strong>SMP Negeri 5 Depok</strong> (2019 - 2022)</li>
+    </ul>
+  </section>
+
+  <section id="pengalaman" class="fade-in">
+    <h2>Pengalaman</h2>
+    <ul>
+      <li>Membuat aplikasi kasir sederhana menggunakan Laravel dan MySQL</li>
+      <li>Mengembangkan website portofolio menggunakan HTML, CSS, dan JavaScript</li>
+      <li>Memahami konsep CRUD dan manajemen database</li>
+    </ul>
+  </section>
+
+  <section id="portofolio" class="fade-in">
+    <h2>Portofolio</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Kasir+App+Screenshot" alt="Aplikasi Kasir">
+        <h3>Aplikasi Kasir Sederhana</h3>
+        <p><strong>Tech Stack:</strong> Laravel, MySQL, Bootstrap</p>
+        <p>Aplikasi berbasis web yang digunakan untuk mencatat transaksi penjualan dan laporan keuangan sederhana.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Web+Portofolio+Screenshot" alt="Web Portofolio">
+        <h3>Website Portofolio Pribadi</h3>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+        <p>Website interaktif untuk menampilkan profil, pengalaman, dan hasil karya pribadi selama belajar di SMK.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Zaida | Dibuat dengan ❤️ menggunakan HTML, CSS, dan JavaScript</p>
+  </footer>
+
+  <script>
+    // Efek muncul saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    window.addEventListener('scroll', () => {
+      faders.forEach(fader => {
+        const rect = fader.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          fader.classList.add('visible');
+        }
+      });
+    });
+
+    // Smooth scroll animasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
 </html>
