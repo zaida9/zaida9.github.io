@@ -9,9 +9,19 @@
     
     <style>
         /* ======================================= */
-        /* CSS (STYLE) */
+        /* CSS (STYLE) - DARK MODE THEME */
         /* ======================================= */
         
+        /* WARNA DARK MODE */
+        :root {
+            --color-background-dark: #121212; /* Latar belakang utama */
+            --color-surface: #1e1e1e; /* Warna permukaan/card */
+            --color-text-primary: #ffffff; /* Teks utama */
+            --color-text-secondary: #b0b0b0; /* Teks sekunder/deskripsi */
+            --color-accent: #00adb5; /* Biru Kehijauan (Aksen) */
+            --color-border: #333; /* Garis/border halus */
+        }
+
         /* RESET DASAR */
         * {
             margin: 0;
@@ -22,8 +32,8 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
+            color: var(--color-text-primary);
+            background-color: var(--color-background-dark); 
             scroll-behavior: smooth;
         }
 
@@ -35,18 +45,13 @@
 
         a {
             text-decoration: none;
-            color: #007bff;
+            color: var(--color-accent);
         }
-
-        /* PALET WARNA */
-        /* Aksen: #00adb5 (biru kehijauan) */
-        /* Gelap: #222831 */
-        /* Terang: #eeeeee */
 
         /* HEADER & NAVIGASI */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            background-color: var(--color-surface);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -62,7 +67,7 @@
         .logo {
             font-size: 1.5em;
             font-weight: 700;
-            color: #222831;
+            color: var(--color-text-primary);
         }
 
         nav ul {
@@ -72,13 +77,13 @@
 
         nav ul li a {
             margin-left: 25px;
-            color: #393e46;
+            color: var(--color-text-secondary);
             font-weight: 500;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #00adb5;
+            color: var(--color-accent); 
         }
 
         /* TOMBOL */
@@ -91,13 +96,13 @@
         }
 
         .btn.primary {
-            background-color: #00adb5;
-            color: #fff;
+            background-color: var(--color-accent);
+            color: var(--color-text-primary);
             border: none;
         }
 
         .btn.primary:hover {
-            background-color: #008c95;
+            background-color: #008c95; /* Aksen sedikit lebih gelap */
             transform: translateY(-2px);
         }
 
@@ -119,13 +124,14 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 50px;
-            color: #222831;
+            color: var(--color-accent);
         }
 
         /* HERO/PROFIL */
         .hero {
-            background-color: #eeeeee;
+            background-color: var(--color-background-dark);
             padding: 100px 0;
+            border-bottom: 1px solid var(--color-border);
         }
 
         .hero .container {
@@ -140,15 +146,19 @@
 
         .hero-content h1 {
             font-size: 3em;
-            color: #222831;
+            color: var(--color-text-primary);
             margin-bottom: 10px;
         }
 
         .hero-content .subtitle {
             font-size: 1.2em;
-            color: #393e46;
+            color: var(--color-accent);
             margin-bottom: 20px;
             font-weight: 600;
+        }
+        
+        .hero-content p:not(.subtitle) {
+            color: var(--color-text-secondary);
         }
 
         .hero-image img {
@@ -156,12 +166,17 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 5px solid var(--color-accent); /* Border aksen */
         }
 
         /* PENDIDIKAN */
+        .pendidikan {
+            background-color: var(--color-background-dark);
+        }
+
         .timeline {
-            border-left: 3px solid #00adb5;
+            border-left: 3px solid var(--color-accent);
             padding-left: 20px;
             max-width: 600px;
             margin: 0 auto;
@@ -170,10 +185,7 @@
         .timeline-item {
             position: relative;
             padding-bottom: 30px;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
+            color: var(--color-text-secondary);
         }
 
         .timeline-item::before {
@@ -182,19 +194,19 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background-color: #00adb5;
+            background-color: var(--color-accent);
             left: -29px;
             top: 5px;
-            border: 3px solid #eeeeee;
+            border: 3px solid var(--color-background-dark);
         }
 
         .timeline-item h3 {
-            color: #222831;
+            color: var(--color-text-primary);
             font-weight: 600;
         }
 
         .timeline-item .period {
-            color: #777;
+            color: var(--color-accent);
             font-style: italic;
             margin-bottom: 5px;
         }
@@ -208,23 +220,31 @@
         }
         
         .sertifikat-card {
-            background: #fff;
+            background: var(--color-surface);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             text-align: center;
             min-width: 250px;
         }
         
         .sertifikat-card i {
             font-size: 3em;
-            color: #00adb5;
+            color: var(--color-accent);
             margin-bottom: 15px;
+        }
+        
+        .sertifikat-card h3 {
+            color: var(--color-text-primary);
+        }
+        
+        .sertifikat-card p {
+            color: var(--color-text-secondary);
         }
 
         /* PORTOFOLIO (Interaktif) */
         .portofolio {
-             background-color: #fff;
+             background-color: var(--color-surface);
         }
 
         .portfolio-tabs {
@@ -234,8 +254,8 @@
 
         .tab-btn {
             background: none;
-            border: 2px solid #00adb5;
-            color: #00adb5;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
             padding: 10px 20px;
             margin: 0 10px;
             border-radius: 20px;
@@ -246,8 +266,8 @@
 
         .tab-btn:hover,
         .tab-btn.active {
-            background-color: #00adb5;
-            color: #fff;
+            background-color: var(--color-accent);
+            color: var(--color-text-primary);
         }
 
         .portfolio-grid {
@@ -257,15 +277,14 @@
         }
 
         .project-card {
-            background: #fff;
+            background: var(--color-background-dark);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s, opacity 0.5s;
             display: block; 
         }
         
-        /* CSS untuk menyembunyikan kartu proyek saat filtering */
         .project-card.hidden {
             display: none;
             opacity: 0;
@@ -277,6 +296,12 @@
             height: 200px;
             object-fit: cover;
             display: block;
+            opacity: 0.8; /* Sedikit redup */
+            transition: opacity 0.3s;
+        }
+        
+        .project-card:hover img {
+            opacity: 1; /* Cerah saat hover */
         }
 
         .project-info {
@@ -284,14 +309,18 @@
         }
 
         .project-info h3 {
-            color: #222831;
+            color: var(--color-text-primary);
             margin-bottom: 5px;
         }
 
         .project-info .tech-stack {
-            color: #00adb5;
+            color: var(--color-accent);
             font-size: 0.9em;
             margin-bottom: 10px;
+        }
+        
+        .project-info p {
+            color: var(--color-text-secondary);
         }
 
         .project-link {
@@ -301,6 +330,10 @@
         }
         
         /* KONTAK */
+        .kontak {
+            background-color: var(--color-background-dark);
+        }
+
         .contact-info {
             text-align: center;
             max-width: 600px;
@@ -310,19 +343,36 @@
         .contact-info p {
             margin: 10px 0;
             font-size: 1.1em;
+            color: var(--color-text-secondary);
         }
 
         .contact-info i {
-            color: #00adb5;
+            color: var(--color-accent);
             margin-right: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--color-text-primary);
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--color-accent);
+        }
+        
+        .contact-info .note {
+             color: #ff6347; /* Warna peringatan/merah lembut */
+             font-style: italic;
+             margin-top: 20px;
         }
 
         /* FOOTER */
         footer {
-            background-color: #222831;
-            color: #eeeeee;
+            background-color: var(--color-surface);
+            color: var(--color-text-secondary);
             padding: 20px 0;
             text-align: center;
+            border-top: 1px solid var(--color-border);
         }
 
         footer .container {
@@ -332,14 +382,14 @@
         }
 
         .social-links a {
-            color: #eeeeee;
+            color: var(--color-text-secondary);
             font-size: 1.2em;
             margin-left: 15px;
             transition: color 0.3s;
         }
 
         .social-links a:hover {
-            color: #00adb5;
+            color: var(--color-accent);
         }
 
         /* Responsif Dasar */
@@ -396,10 +446,8 @@
         <section id="profil" class="hero section-reveal">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Halo, saya <b>Zaida Thalitha Atiqah</b> 👋</h1>                    
-                    <p>Saya adalah siswa kelas XI SMK Informatika Utama dengan jurusan Pengembangan Perangkat Lunak dan Gim (PPLG). 
-                        Saya memiliki minat besar dalam bidang pemrograman dan pengembangan aplikasi. 
-                        Tujuan saya adalah menjadi developer yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.</p>
+                    <h1>Halo, saya <b>Zaida Thalitha Atiqah</b> 👋</h1>
+                    <p>Saya adalah siswa **kelas XI SMK Informatika Utama** dengan jurusan Pengembangan Perangkat Lunak dan Gim (PPLG). Saya memiliki minat besar dalam bidang pemrograman dan pengembangan aplikasi. Tujuan saya adalah menjadi developer yang mampu menciptakan solusi digital yang bermanfaat dan inovatif.</p>
                     <a href="#portofolio" class="btn primary">Lihat Karya Saya</a>
                 </div>
                 <div class="hero-image">
@@ -459,7 +507,6 @@
                         <img src="https://via.placeholder.com/600x400?text=Screenshot+Web+Statis" alt="Screenshot Web Statis">
                         <div class="project-info">
                             <h3><b>Web Statis Pribadi</b></h3>
-                            <p class="tech-stack"><b>Tech Stack:</b> HTML5, CSS3</p>
                             <p>Proyek di kelas X untuk menampilkan informasi diri dan hobi tanpa interaksi lanjutan.</p>
                             <a href="#" target="_blank" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -469,7 +516,6 @@
                         <img src="https://via.placeholder.com/600x400?text=Screenshot+Kasir+Sederhana" alt="Screenshot Kasir Sederhana">
                         <div class="project-info">
                             <h3><b>Aplikasi Kasir Sederhana</b></h3>
-                            <p class="tech-stack"><b>Tech Stack:</b> Bahasa Pemrograman Dasar (misal: Python/Pascal/Java), Konsep Logika</p>
                             <p>Aplikasi konsol/desktop untuk menghitung total belanja, diskon, dan kembalian.</p>
                             <a href="#" target="_blank" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -479,7 +525,6 @@
                         <img src="https://via.placeholder.com/600x400?text=Screenshot+Kalkulator" alt="Screenshot Kalkulator Sederhana">
                         <div class="project-info">
                             <h3><b>Kalkulator Sederhana</b></h3>
-                            <p class="tech-stack"><b>Tech Stack:</b> Bahasa Pemrograman Dasar, Fungsi Aritmatika</p>
                             <p>Program dasar untuk melakukan operasi hitungan (tambah, kurang, kali, bagi).</p>
                             <a href="#" target="_blank" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -497,6 +542,7 @@
                     <p><i class="fas fa-phone-alt"></i> Telepon: <a href="tel:+6289508423660">+62 895-0842-3660</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> Alamat: Jl.Galur RT 05, RW 006, No.10 Krukut, Limo, Depok.</p>
                     <br>
+                    <p class="note">**Catatan Tambahan:** Tidak memiliki pengalaman organisasi.</p>
                 </div>
             </div>
         </section>
